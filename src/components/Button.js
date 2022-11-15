@@ -9,6 +9,11 @@ const StyledButton = styled.button`
     background-color: ${props => props.bg || BLUE};
     color: ${props => props.color || BEIGE_LIGHT};
     text-transform: uppercase;
+    &:hover {
+        background: white;
+        color: ${BLUE};
+        cursor: pointer;
+    }
 `
 const Button = (props) => {
     return <StyledButton {...props}/>;

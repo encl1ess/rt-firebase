@@ -5,18 +5,21 @@ import { LOGIN_ROUTE } from '../utils/utils';
 import styled from 'styled-components';
 import {BEIGE, BEIGE_LIGHT, BLUE} from '../utils/colors';
 import Container from './Container';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Context } from '..';
 
 const StyledNavbar = styled(Container)`
     width: 100%;
 `
 
 const Navbar = () => {
-    let user = false;
+    const {auth} = React.useContext(Context);
+    const [user] = useAuthState(auth);
     return (
         <StyledNavbar bg={BEIGE_LIGHT}>
             
             {user ? 
-            <Button>Выйти</Button> 
+            <Button onClick={()=>auth.signOut()}>Выйти</Button> 
             :
             <NavLink to={LOGIN_ROUTE}>
                 <Button>Войти</Button>

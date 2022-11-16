@@ -8,6 +8,7 @@ import Container from './Container';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Context } from '..';
 
+
 const StyledNavbar = styled(Container)`
     width: 100%;
 `
@@ -15,6 +16,7 @@ const StyledNavbar = styled(Container)`
 const Navbar = () => {
     const {auth} = React.useContext(Context);
     const [user] = useAuthState(auth);
+    
     return (
         <StyledNavbar bg={BEIGE_LIGHT}>
             

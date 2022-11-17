@@ -5,7 +5,6 @@ import {
     Route
   } from "react-router-dom";
 import { privateRoutes, publicRoutes } from '../routes';
-import { CHAT_ROUTE, LOGIN_ROUTE } from '../utils/utils';
 import {useAuthState} from 'react-firebase-hooks/auth'
 import Login from './Login';
 import { Context } from '..';

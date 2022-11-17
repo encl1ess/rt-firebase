@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import styled from 'styled-components';
 import Container from './components/Container';
-import { initializeApp } from 'firebase/app';
-import { getFirestore} from 'firebase/firestore/lite';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 import { getAuth } from 'firebase/auth';
+import { BEIGE_LIGHT } from './utils/colors';
 
 
 const firebaseApp = initializeApp({
@@ -21,15 +22,17 @@ const firebaseApp = initializeApp({
 const firestore = getFirestore(firebaseApp);
 const auth = getAuth();
 
-  const Context = React.createContext(null)
+const Context = React.createContext(null)
 
-  const AppWrapper = styled(Container)`
+const AppWrapper = styled(Container)`
+  min-height: 100vh;
+  max-height: fit-content;
   margin: 0;
   padding: 0;
 `
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <AppWrapper direction="column">
+    <AppWrapper direction="column" bg={BEIGE_LIGHT} justify="start">
       <Context.Provider value={
         {
           firebaseApp, 

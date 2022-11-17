@@ -10,7 +10,7 @@ import Loader from './components/Loader';
 
 function App() {
   const {auth} = React.useContext(Context);
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   if(loading) return <Loader/>
   return (

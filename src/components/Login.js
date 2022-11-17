@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Context } from '..';
-import { BEIGE, BEIGE_LIGHT, BLUE } from '../utils/colors';
+import { BEIGE, BLUE } from '../utils/colors';
 import Button from './Button';
 import Container from './Container';
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
@@ -11,9 +11,11 @@ const StyledContainer = styled(Container)`
     height: 15em;
     color: white;
     margin: 2em;
+    border-radius: 1em;
+    
 `
 const Login = () => {
-    const { auth} = useContext(Context);
+    const {auth} = useContext(Context);
 
     const login = async () => {
         const provider = new GoogleAuthProvider();
@@ -23,7 +25,7 @@ const Login = () => {
     }
     return (
         <StyledContainer direction="column" bg={BLUE}>
-            <p>Авторизоваться с:</p>
+            <p>Sign-in with:</p>
             <Button onClick={login} bg={BEIGE} color={BLUE} border={BLUE}>Google</Button>
         </StyledContainer>
     );

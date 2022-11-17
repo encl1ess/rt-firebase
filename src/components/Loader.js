@@ -12,7 +12,8 @@ const rotateAnimation = keyframes`
     }
 `
 const StyledLoader = styled(Container)`
-    height: 100vh;
+    margin: auto;
+    height:100%;
     &:after{
         content: " ";
         display: block;
@@ -24,9 +25,9 @@ const StyledLoader = styled(Container)`
     }
 `
 const Loader = () => {
-    return (<Container height="100vh">
+    return (
         <StyledLoader />
-    </Container>);
+        );
 };
 
 export default Loader;

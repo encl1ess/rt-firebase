@@ -1,3 +1,3 @@
 # rt-firebase
 
-rt-chat-f2815.web.app/
+ https://rt-chat-f2815.web.app/

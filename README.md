@@ -1,6 +1,6 @@
 # rt-firebase
 
-Real Time web chat with Google authorization.
+Real Time React web chat with Google authorization.
 
 https://rt-chat-f2815.web.app/
 
